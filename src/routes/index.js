@@ -168,18 +168,18 @@ router.post("/send-message", async (request, response, next) => {
     }
 })
 
-router.get("/profile/:id/messages", async (request, response, next) => {
-    console.log("profile id messages route")
-    const loggedInUserId = request.params.id
-    const receiverUserId = request.body.receiveingUserId
-    try {
-        const messages = await getMessages(loggedInUserId, receiverUserId)
-        console.log(messages)
-        response.json({ messages })
-    } catch (error) {
-        next(error)
-    }
-})
+// router.get("/profile/:id/messages", async (request, response, next) => {
+//     console.log("profile id messages route")
+//     const loggedInUserId = request.params.id
+//     const receiverUserId = request.body.receiveingUserId
+//     try {
+//         const messages = await getMessages(loggedInUserId, receiverUserId)
+//         console.log(messages)
+//         response.json({ messages })
+//     } catch (error) {
+//         next(error)
+//     }
+// })
 
 router.post(`/signin`, async (req, res, next) => {
     let { username, password } = req.body
